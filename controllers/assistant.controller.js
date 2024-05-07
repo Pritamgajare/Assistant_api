@@ -2,12 +2,19 @@ const Assistant = require('../models/assistant.model');
 
 const createAssistant = async (req, res) => {
     try {
+        const requiredFields = ['name', 'mobile', 'email', 'salary', 'city', 'country', 'department', 'role'];
+        const missingFields = requiredFields.filter(field => !(field in req.body));
+        if (missingFields.length > 0) {
+            return res.status(400).json({ message: `Missing required fields: ${missingFields.join(', ')}` });
+        }
+
         const assistant = await Assistant.create(req.body);
         res.status(201).json({ id: assistant._id });
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
 };
+
 
 const getAssistantById = async (req, res) => {
     try {
