@@ -21,8 +21,34 @@ const getAssistantById = async (req, res) => {
     }
 };
 
+const updateAssistant = async (req, res) => {
+    try {
+        const assistant= await Assistant.findByIdAndUpdate(req.params.assistant_id, req.body, { new: true });
+        if (!assistant) {
+            return res.status(404).json({ message: 'Assistant not found' });
+        }
+        res.json(assistant);
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
+};
+
+const deleteAssistant = async (req, res) => {
+    try {
+        const assistant = await Assistant.findByIdAndDelete(req.params.assistant_id);
+        if (!assistant) {
+            return res.status(404).json({ message: 'Assistant not found' });
+        }
+        res.json({ message: 'Assistant deleted successfully' });
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
+};
+
 
 module.exports = {
     createAssistant,
-    getAssistantById
+    getAssistantById,
+    updateAssistant,
+    deleteAssistant
 };
