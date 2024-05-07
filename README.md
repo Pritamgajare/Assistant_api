@@ -18,7 +18,7 @@ nodemon index.js
 - **Create Assistant (POST):**
   - Method: POST
   - URL: `http://localhost:3000/assistant/create`
-  - Body (JSON):
+  - Body (JSON) example:
     ```json
     {
         "name": "John Doe",
