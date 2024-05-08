@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "8e3366ee-49d6-454b-ad1e-c39b6e5781c8",
+		"name": "Assistant_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25909490"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Prit Gajare\",\r\n    \"mobile\": \"7718636789\",\r\n    \"email\": \"pritgajare@gmail.com\",\r\n    \"salary\": 50000,\r\n    \"city\": \"Mumbai\",\r\n    \"country\": \"India\",\r\n    \"department\": \"IT\",\r\n    \"role\": \"Assistant\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/assistant/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"assistant",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/assistant/663b018a4077dca8832a35f9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"assistant",
+						"663b018a4077dca8832a35f9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Ragnar Lothbrok\",\r\n    \"email\": \"ragnarlothbrok@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/assistant/663b018a4077dca8832a35f9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"assistant",
+						"663b018a4077dca8832a35f9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/assistant/663b018a4077dca8832a35f9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"assistant",
+						"663b018a4077dca8832a35f9"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
